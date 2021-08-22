@@ -1,4 +1,5 @@
 import { useState } from "react";
+import api from '../../../api'
 
 const KeywordSearchForm = events => {
   const [ keyword, setKeyword ] = useState('');
@@ -7,7 +8,8 @@ const KeywordSearchForm = events => {
   const submit = e => {
     e.preventDefault()
 
-    setItems(['응 여기'])
+    const data = api.products.get(keyword)
+    setItems(data)
   }
 
   return (

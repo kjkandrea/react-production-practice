@@ -10,7 +10,7 @@ const STATUS = {
 const { domain } = config
 
 const goAuth = () => {
-  alert('gogo')
+  alert('401 response.')
 }
 
 const request = (method, url, data) => {
@@ -22,8 +22,22 @@ const request = (method, url, data) => {
   .then(result => result.data)
   .catch(result => {
     console.log(result)
-    const {status} = result.response
+    const { status } = result.response
     if(status === STATUS.UNAUTHORIZED) goAuth()
     throw result.response
   })
 }
+
+const products = {
+  get(keyword) {
+    console.log('검색키워드 : %s', keyword)
+
+    return ['응 여기']
+  },
+}
+
+const api = {
+  products
+}
+
+export default api
