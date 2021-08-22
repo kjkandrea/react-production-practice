@@ -6,14 +6,22 @@ const KeywordSearchForm = events => {
   const { setItems } = events
 
   const submit = e => {
-    e.preventDefault()
+    e?.preventDefault()
 
     api.products.get(keyword).then(data => {
-      console.log(data)
+      console.log(data.items)
       setItems(['너는 아직 준비가 안됬다.'])
     })
-
   }
+
+  // test code
+  const test = () => {
+    console.log('halo')
+
+    setKeyword('백')
+    submit()
+  }
+  if (!keyword) test()
 
   return (
     <form onSubmit={submit}>
