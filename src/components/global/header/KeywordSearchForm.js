@@ -9,8 +9,7 @@ const KeywordSearchForm = events => {
     e?.preventDefault()
 
     api.products.get(keyword).then(data => {
-      console.log(data.items)
-      setItems(['너는 아직 준비가 안됬다.'])
+      setItems(data.items)
     })
   }
 

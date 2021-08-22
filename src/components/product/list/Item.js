@@ -1,7 +1,9 @@
-const Item = () => {
+const Item = props => {
+  console.log(props)
+
   return (
     <div>
-      <h3>아이템</h3>
+      <h3>{props.data.productName}</h3>
     </div>
   )
 }
