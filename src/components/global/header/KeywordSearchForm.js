@@ -1,13 +1,20 @@
+import { useState } from "react";
+
 const KeywordSearchForm = () => {
+  const [ keyword, setKeyword ] = useState('');
+
   const submit = e => {
     e.preventDefault()
-    alert('funk you')
+    console.log(keyword)
   }
 
   return (
     <form onSubmit={submit}>
-      <h2>귀여운 서치폼</h2>
-      <input type="text" />
+      <input
+        type="text"
+        value={keyword}
+        onChange={e => setKeyword(e.target.value)}
+      />
       <button type="submit">상품 검색</button>
     </form>
   )
