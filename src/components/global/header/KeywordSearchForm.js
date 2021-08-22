@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-const KeywordSearchForm = () => {
+const KeywordSearchForm = events => {
   const [ keyword, setKeyword ] = useState('');
+  const { setItems } = events
 
   const submit = e => {
     e.preventDefault()
-    console.log(keyword)
+
+    setItems(['응 여기'])
   }
 
   return (

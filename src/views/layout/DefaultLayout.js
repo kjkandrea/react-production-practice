@@ -3,10 +3,15 @@ import Footer from '../../components/global/Footer'
 
 const DefaultLayout = props => {
   const Page = props.page
+
+  const setItems = items => {
+    console.log(items)
+  }
+
   return (
     <>
-      <Header/>
-      <Page />
+      <Header setItems={setItems} />
+      <Page/>
       <Footer/>
     </>
   )
