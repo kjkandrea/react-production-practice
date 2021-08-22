@@ -1,6 +1,12 @@
+import Header from '../../components/global/Header'
+import Footer from '../../components/global/Footer'
+
 const DefaultLayout = () => {
   return (
-    <h1>빵상</h1>
+    <>
+      <Header/>
+      <Footer/>
+    </>
   )
 }
 
