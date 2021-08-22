@@ -35,9 +35,7 @@ const request = (method, url, data) => {
 
 const products = {
   get(keyword) {
-    console.log('검색키워드 : %s', keyword)
-
-    return request('get', '/products/search', keyword)
+    return request('get', `/products/search?keywords=${keyword}`)
   },
 }
 

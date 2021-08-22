@@ -14,15 +14,6 @@ const KeywordSearchForm = events => {
     })
   }
 
-  // test code
-  const test = () => {
-    console.log('halo')
-
-    setKeyword('백')
-    submit()
-  }
-  if (!keyword) test()
-
   return (
     <form onSubmit={submit}>
       <input
