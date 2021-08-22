@@ -3,15 +3,20 @@ import NoItem from './NoItem'
 
 const List = props => {
   const { data } = props
-  console.log(data)
-  const dummyItems = [{productName: '어려워'}, {productName: '힝'}]
-
-  const ListItems = data => data ? dummyItems.map(item => <Item key={item.productName} data={item} />) : <NoItem />;
-
-  console.log(data)
+  console.log(data?.length)
+  const ListItems = data => data?.length >= 1 ? data.map(item =>
+      <li>
+        <Item
+          key={item.productName}
+          data={item}
+        />
+      </li>
+    ) : <NoItem />;
 
   return (
-    <ListItems />
+    <ul>
+      <ListItems />
+    </ul>
   )
 }
 
