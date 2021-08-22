@@ -1,5 +1,6 @@
 import axios from 'axios'
 import config from '../config/server'
+import qs from 'qs'
 
 const STATUS = {
   UNAUTHORIZED: 401
@@ -34,8 +35,11 @@ const request = (method, url, data) => {
 }
 
 const products = {
-  get(keyword) {
-    return request('get', `/products/search?keywords=${keyword}`)
+  get(keywords) {
+    const query = qs.stringify({
+      keywords
+    })
+    return request('get', '/products/search?' + query)
   },
 }
 
