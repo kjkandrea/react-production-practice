@@ -1,23 +1,28 @@
 import axios from 'axios'
 import config from '../config/server'
 
-console.log(config)
-
 const STATUS = {
   UNAUTHORIZED: 401
 }
 
-const { domain } = config
+const { domain, version, clientId, platform } = config
 
 const goAuth = () => {
   alert('401 response.')
 }
 
 const request = (method, url, data) => {
+  const headers = {
+    version,
+    clientId,
+    platform
+  }
+
   return axios({
     method,
     url: domain + url,
-    data
+    data,
+    headers
   })
   .then(result => result.data)
   .catch(result => {
@@ -32,7 +37,7 @@ const products = {
   get(keyword) {
     console.log('검색키워드 : %s', keyword)
 
-    return ['응 여기']
+    return request('get', '/products/search', keyword)
   },
 }
 

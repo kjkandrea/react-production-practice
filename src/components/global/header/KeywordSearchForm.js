@@ -8,8 +8,11 @@ const KeywordSearchForm = events => {
   const submit = e => {
     e.preventDefault()
 
-    const data = api.products.get(keyword)
-    setItems(data)
+    api.products.get(keyword).then(data => {
+      console.log(data)
+      setItems(['너는 아직 준비가 안됬다.'])
+    })
+
   }
 
   return (
