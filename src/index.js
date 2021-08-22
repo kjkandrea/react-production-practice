@@ -5,8 +5,6 @@ import App from './App';
 import Products from './views/Products'
 import reportWebVitals from './reportWebVitals';
 
-import './api/index.js'; // test code
-
 ReactDOM.render(
   <React.StrictMode>
     <Products />
