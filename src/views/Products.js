@@ -1,7 +1,18 @@
-const Products = () => (
-  <div>
-    아이템내놔
-  </div>
-)
+import Header from '../components/global/Header'
+import Footer from '../components/global/Footer'
 
-export default Products
+const Products = () => {
+  const setItems = items => {
+    console.log(items)
+  }
+
+  return (
+    <>
+      <Header setItems={setItems} />
+      <h1>아이템 내놔</h1>
+      <Footer/>
+    </>
+  )
+}
+
+export default Products;
