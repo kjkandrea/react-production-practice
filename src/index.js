@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import DefaultLayout from './views/layout/DefaultLayout'
+import Products from './views/Products'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <DefaultLayout />
+    <DefaultLayout page={Products}/>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

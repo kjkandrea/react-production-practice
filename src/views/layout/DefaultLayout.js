@@ -1,10 +1,12 @@
 import Header from '../../components/global/Header'
 import Footer from '../../components/global/Footer'
 
-const DefaultLayout = () => {
+const DefaultLayout = props => {
+  const Page = props.page
   return (
     <>
       <Header/>
+      <Page />
       <Footer/>
     </>
   )
