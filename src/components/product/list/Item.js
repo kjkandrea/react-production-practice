@@ -1,8 +1,9 @@
 const Item = props => {
+  console.log(props)
   return (
-    <div>
+    <li>
       <h3>{props.data.productName}</h3>
-    </div>
+    </li>
   )
 }
 
